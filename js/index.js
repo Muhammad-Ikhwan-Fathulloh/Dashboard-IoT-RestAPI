@@ -63,7 +63,7 @@ function myFetch(url, type, data) {
     headers: {
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
     })
     .then(res => {
         if (res.ok) { console.log("HTTP request successful") }
@@ -181,10 +181,11 @@ button.addEventListener("click", function() {
         //condition insert data update == false 
         if(update == false){
             document.getElementById("contact-list").innerHTML = `<ul class="card" id="contact-list"></ul>`
+            let pin_value = Number(contact_pin.value)
             myFetch(url_api, "POST",{
                 contact_name: contact_name.value ,
                 contact_value: contact_value.value,
-                contact_pin: parseInt(contact_pin.value)
+                contact_pin: pin_value
                }).then(res => console.log(res))
                
                clearContact()
@@ -195,10 +196,11 @@ button.addEventListener("click", function() {
         //condition update data update == true 
         else if(update == true){
             document.getElementById("contact-list").innerHTML = `<ul class="card" id="contact-list"></ul>`
+            let pin_value = Number(contact_pin.value)
             myFetch(`${url_api}/${update_id}`, "PUT",{
                 contact_name: contact_name.value ,
                 contact_value: contact_value.value,
-                contact_pin: parseInt(contact_pin.value)
+                contact_pin: pin_value
                } 
             ).then(res => console.log(res))
 
