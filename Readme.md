@@ -46,5 +46,5 @@
 
 ### Deploy with Netlify
 <ul>
-    <li><strong>Deploy :</strong> </li>
+    <li><strong>Deploy :</strong> <a href="https://dashboard-iot-oxigen.netlify.app/">Klik</a></li>
 </ul>
