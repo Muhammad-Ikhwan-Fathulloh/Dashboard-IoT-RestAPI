@@ -184,7 +184,7 @@ button.addEventListener("click", function() {
             myFetch(url_api, "POST",{
                 contact_name: contact_name.value ,
                 contact_value: contact_value.value,
-                contact_pin: contact_pin.value
+                contact_pin: parseInt(contact_pin.value)
                }).then(res => console.log(res))
                
                clearContact()
@@ -198,7 +198,7 @@ button.addEventListener("click", function() {
             myFetch(`${url_api}/${update_id}`, "PUT",{
                 contact_name: contact_name.value ,
                 contact_value: contact_value.value,
-                contact_pin: contact_pin.value
+                contact_pin: parseInt(contact_pin.value)
                } 
             ).then(res => console.log(res))
 
