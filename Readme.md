@@ -1,4 +1,4 @@
-# TODO APP CRUD API with Vanilla JavaScript
+# Dashboard IoT APP Rest API with Vanilla JavaScript
 
 ### Bootstrap
 <ul>
@@ -13,14 +13,14 @@
 ### Rest API with MOCK API 
 <ul>
     <li><strong>Create endpoint api with :</strong> https://mockapi.io/</li>
-    <li><strong>My Endpoint Todo :</strong> https://62bcfafbc5ad14c110b50245.mockapi.io/api/v1/todo</li>
+    <li><strong>My Endpoint Todo :</strong> https://62fdb5c76e617f88dead907b.mockapi.io/api/aktuator</li>
     <li>Method API : 
         <ul>
-            <li><strong>GET : https://62bcfafbc5ad14c110b50245.mockapi.io/api/v1/todo</strong></li> 
-            <li><strong>GET by ID : https://62bcfafbc5ad14c110b50245.mockapi.io/api/v1/todo/:id</strong></li>  
-            <li><strong>POST : https://62bcfafbc5ad14c110b50245.mockapi.io/api/v1/todo</strong></li> 
-            <li><strong>PUT : https://62bcfafbc5ad14c110b50245.mockapi.io/api/v1/todo/:id</strong></li> 
-            <li><strong>DELETE : https://62bcfafbc5ad14c110b50245.mockapi.io/api/v1/todo/:id</strong></li> 
+            <li><strong>GET : https://62fdb5c76e617f88dead907b.mockapi.io/api/aktuator</strong></li> 
+            <li><strong>GET by ID : https://62fdb5c76e617f88dead907b.mockapi.io/api/aktuator/:id</strong></li>  
+            <li><strong>POST : https://62fdb5c76e617f88dead907b.mockapi.io/api/aktuator</strong></li> 
+            <li><strong>PUT : https://62fdb5c76e617f88dead907b.mockapi.io/api/aktuator/:id</strong></li> 
+            <li><strong>DELETE : https://62fdb5c76e617f88dead907b.mockapi.io/api/aktuator/:id</strong></li> 
         </ul>
     </li>
 </ul>
@@ -39,7 +39,12 @@
     </li>
 </ul>
 
+### Project Wokwi Nodemcu ESP32 with MockApi
+<ul>
+ <li><strong>Link Project : </strong> <a href="https://wokwi.com/projects/340299995483734610">Klik</a></li>
+</ul>
+
 ### Deploy with Netlify
 <ul>
-    <li><strong>Deploy :</strong> https://todo-oxigen.netlify.app/</li>
+    <li><strong>Deploy :</strong> </li>
 </ul>
