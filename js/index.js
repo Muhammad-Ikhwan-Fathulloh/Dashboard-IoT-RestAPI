@@ -92,22 +92,27 @@ function renderContact(data) {
     const ContactUL = document.querySelector('#contact-list')
 
     const ContactLi = document.createElement('li')
-    const p1 = document.createElement('p')
-    const p2 = document.createElement('p')
-    const p3 = document.createElement('p')
-    const btnStatus = document.createElement('p')
-    const btnEdit = document.createElement('p')
-    const btnDelete = document.createElement('p')
+    const ContactCard = document.createElement('div')
+    const ContactCardBody = document.createElement('div')
+    const ContactDiv = document.createElement('div')
+    const p1 = document.createElement('div')
+    const p2 = document.createElement('div')
+    const p3 = document.createElement('div')
+    const btnStatus = document.createElement('div')
+    const btnEdit = document.createElement('div')
+    const btnDelete = document.createElement('div')
     const br = document.createElement('br')
-    const hr = document.createElement('hr')
 
     ContactLi.className = 'contact-card'          
-    p1.className = 'mb-3'   
-    p2.className = 'mb-3' 
-    p3.className = 'mb-3' 
-    btnStatus.className = 'mb-3'
-    btnEdit.className = 'mb-3'                      
-    btnDelete.className = 'mb-3'   
+    p1.className = 'col-md-4'   
+    p2.className = 'col' 
+    p3.className = 'col-md-2' 
+    ContactCard.className = 'card mb-3'
+    ContactCardBody.className = 'card-body'
+    ContactDiv.className = 'row mb-3'
+    btnStatus.className = 'col-md-1'
+    btnEdit.className = 'col-md-1'                      
+    btnDelete.className = 'col-md-1'   
     ContactLi.dataset.id = value.id
 
     p1.innerHTML = "Perangkat "+value.contact_name
@@ -124,13 +129,14 @@ function renderContact(data) {
     btnEdit.innerHTML = `<button class="btn btn-primary" id="${value.id}" onClick="ContactEdit(this.id)">Edit</button>`
     btnDelete.innerHTML = `<button class="btn btn-danger" id="${value.id}" onClick="ContactDelete(this.id)">Delete</button>`
 
-    ContactLi.append(p1)
-    ContactLi.append(p2)
-    ContactLi.append(p3)
-    ContactLi.append(btnStatus)
-    ContactLi.append(btnEdit)
-    ContactLi.append(btnDelete)
-    ContactUL.append(ContactLi)
+
+    ContactDiv.append(p1, p3)
+    ContactDiv.append(btnStatus)
+    ContactDiv.append(btnEdit)
+    ContactDiv.append(btnDelete)
+    ContactCardBody.append(ContactDiv)
+    ContactCard.append(ContactCardBody)
+    ContactUL.append(ContactCard)
     }
 }
 // Function to render data to dom
@@ -176,11 +182,11 @@ button.addEventListener("click", function() {
     // validasi input
     if (contact_name.value == "" || contact_value.value == "") {
         // alert failed
-        alert("Input contact_name and contact_value")
+        alert("Input contact_name, contact_value, contact_pin")
     }else{
         //condition insert data update == false 
         if(update == false){
-            document.getElementById("contact-list").innerHTML = `<ul class="card" id="contact-list"></ul>`
+            document.getElementById("contact-list").innerHTML = `<ul id="contact-list"></ul>`
             let pin_value = Number(contact_pin.value)
             myFetch(url_api, "POST",{
                 contact_name: contact_name.value ,
@@ -195,7 +201,7 @@ button.addEventListener("click", function() {
 
         //condition update data update == true 
         else if(update == true){
-            document.getElementById("contact-list").innerHTML = `<ul class="card" id="contact-list"></ul>`
+            document.getElementById("contact-list").innerHTML = `<ul id="contact-list"></ul>`
             let pin_value = Number(contact_pin.value)
             myFetch(`${url_api}/${update_id}`, "PUT",{
                 contact_name: contact_name.value ,
@@ -214,7 +220,7 @@ button.addEventListener("click", function() {
 
 // Function to delete data
 function ContactDelete(id) {
-    document.getElementById("contact-list").innerHTML = `<ul class="card" id="contact-list"></ul>`
+    document.getElementById("contact-list").innerHTML = `<ul id="contact-list"></ul>`
     myFetch(`${url_api}/${id}`, "DELETE").then(res => console.log(res))
     
     alert("Delete contact successful")
@@ -225,7 +231,7 @@ function ContactDelete(id) {
 // Function to delete data
 function ContactStatus(value, id) {
     console.log(value, id)
-    document.getElementById("contact-list").innerHTML = `<ul class="card" id="contact-list"></ul>`
+    document.getElementById("contact-list").innerHTML = `<ul id="contact-list"></ul>`
     if (value == "1") {
         myFetch(`${url_api}/${id}`, "PUT",{
             contact_value: "0"

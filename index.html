@@ -13,12 +13,25 @@
   
   <body>
     <div class="container">
-        <h1>Dashboard IoT</h1>
-    <div class="mb-3">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Dashboard IoT</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+           
+            
+          </div>
+        </div>
+      </nav>
+      <hr>
+    <div class="row">
+      <div class="col mb-3">
         <label for="title" class="form-label">Nama</label>
         <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="input name">
       </div>
-      <div class="mb-3">
+      <div class="col mb-3">
         <label for="description" class="form-label">Status</label>
         <select class="form-control" name="contact_value" id="contact_value">
               <option value="">Select Status</option>
@@ -26,21 +39,23 @@
               <option value="0">Non Aktif</option>
         </select>
       </div>
-      <div class="mb-3">
+      <div class="col mb-3">
         <label for="title" class="form-label">Pin</label>
         <input type="text" class="form-control" id="contact_pin" name="contact_pin" placeholder="input pin">
       </div>
-      <div>
-        <button class="btn btn-success" id="button-contact">Save</button>
-      </div>
-      <br>
-      <div>
-        <button class="btn btn-dark" id="button-clear">Clear</button>
+    </div>
+      <div class="row">
+        <div class="col-md-3">
+          <button class="btn btn-success" id="button-contact">Save</button>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-dark" id="button-clear">Clear</button>
+        </div>
       </div>
       <hr>
       <!-- list contact -->
     <div>
-        <ul class="card" id="contact-list">
+        <ul id="contact-list">
         </ul>
       </div>
     </div>
